@@ -1,4 +1,5 @@
 import './App.css';
+import NestedMapping from './Components/NestedMapping';
 import StudentInfo from './Components/StudentInfo';
 
 function App() {
@@ -30,13 +31,18 @@ function App() {
 
       {/* <StudentInfo testObject1={{testObject1,testObject2}}/> */}
 
-      <div className="App h-screen grid place-items-center">
+      {/* <div className="App h-screen grid place-items-center">
 
-        <div className="bg-gray-200 p-8 rounded shadow">
+        <div className="bg-blue-200 p-8 rounded shadow">
           Centered Content
 
         </div>
-      </div>
+      </div> */}
+
+
+
+        <NestedMapping />
+
 
     </div>
   );
