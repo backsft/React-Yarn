@@ -1,0 +1,31 @@
+[
+    {
+        "stId" : 1,
+        "stName": "Mr A",
+        "stAge": 8,
+        "stAdrress" : "dhaka",
+        "stPhone" : 8801777668522
+    },
+    {
+        "stId" : 2,
+        "stName": "Mr B",
+        "stAge": 8,
+        "stAdrress" : "khulna",
+        "stPhone" : 8801777668522
+    },
+
+    {
+        "stId" : 3,
+        "stName": "Mr C",
+        "stAge": 8,
+        "stAdrress" : "Rajshahi",
+        "stPhone" : 8801777668522
+    },
+    {
+        "stId" : 4,
+        "stName": "Mr D",
+        "stAge": 9,
+        "stAdrress" : "Rangpur",
+        "stPhone" : 8865995595
+    }
+]
