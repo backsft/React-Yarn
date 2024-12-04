@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 function NestedMapping() {
-
     const info = [
         {
             "name": "Mr A",
@@ -25,7 +24,6 @@ function NestedMapping() {
                 }
             ]
         },
-
         {
             "name": "Mr C",
             "age": 21,
@@ -37,47 +35,29 @@ function NestedMapping() {
                 }
             ]
         }
-
-
-
     ];
 
     return (
         <>
-            <div>StudentInfo </div>
+            <div>StudentInfo</div>
             <br />
-            
-            { info.map((info,index)=> <article> 
-
-                <h3>FullName : {info.name}</h3>
-                <h3>Age : {info.age}</h3>
-                <h3>Address : {info.address}</h3>
-                {info.phones.map((phone,phoneIndex) =>
-                <div>
-
-                    <p>Home Phone: {phone['home-phone']}</p>
-                    <p>Office Phone: {phone['office-phone']}</p>
-                   
-                </div>
-
-                )
-                    
-                
-                }
-
-                <br /><hr />
-            </article> )
-            
-            } 
-
+            {info.map((infoItem, index) => (
+                <article key={index}>
+                    <h3>FullName: {infoItem.name}</h3>
+                    <h3>Age: {infoItem.age}</h3>
+                    <h3>Address: {infoItem.address}</h3>
+                    {infoItem.phones.map((phone, phoneIndex) => (
+                        <div key={phoneIndex}>
+                            <p>Home Phone: {phone['home-phone']}</p>
+                            <p>Office Phone: {phone['office-phone']}</p>
+                        </div>
+                    ))}
+                    <br />
+                    <hr />
+                </article>
+            ))}
         </>
-
-
-
-
-
-
-    )
+    );
 }
 
-export default NestedMapping
+export default NestedMapping;

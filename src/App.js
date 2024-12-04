@@ -1,50 +1,34 @@
-import './App.css';
-import NestedMapping from './Components/NestedMapping';
-import StudentInfo from './Components/StudentInfo';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+
+import Home from "./Components/Home";
+import CenterDiv from "./Components/CenterDiv";
+import PrivateRoute from "./Components/PrivateRoute";
+import LoginSignup from "./Components/LoginSignup";
 
 function App() {
-
-  //console.log();
-
-  //pass a object as props
-
-  const testObject1 = {
-    "stId": 100,
-    "stName": "Mr Test1",
-    "stAge": 9,
-    "stAdrress": "dhaka",
-    "stPhone": 19122265888
-  }
-
-  const testObject2 = {
-    "stId": 101,
-    "stName": "Mr Test2",
-    "stAge": 10,
-    "stAdrress": "khulna",
-    "stPhone": 656592212
-  }
-
   return (
-    <div className="App">
-
-      {/* <StudentInfo testObject1={(testObject1)} testObject2={(testObject2)}/> */}
-
-      {/* <StudentInfo testObject1={{testObject1,testObject2}}/> */}
-
-      {/* <div className="App h-screen grid place-items-center">
-
-        <div className="bg-blue-200 p-8 rounded shadow">
-          Centered Content
-
-        </div>
-      </div> */}
+    <Router>
+      <Routes>
+        {/* Public Route */}
+        <Route path="/superuser" element={<CenterDiv />} />
+        <Route path="/" element={<LoginSignup />} />
 
 
+        {/* Private Route */}
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
 
-        <NestedMapping />
-
-
-    </div>
+        {/* Redirect to /superuser if no route matches */}
+        <Route path="*" element={<Navigate to="/superuser" />} />
+      </Routes>
+    </Router>
   );
 }
 
